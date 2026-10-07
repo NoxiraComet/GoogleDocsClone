@@ -1,3 +1,4 @@
+import { FIRESTORE_COLLECTIONS } from "@config/constants";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
