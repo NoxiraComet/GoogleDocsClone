@@ -2,9 +2,7 @@ import Button from "@component/buttons/Button";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 
-interface LoginPageProps {}
-
-const LoginPage: React.FC<LoginPageProps> = () => {
+const LoginPage: React.FC = () => {
   return (
     <div
       className="flex flex-col items-center justify-center
