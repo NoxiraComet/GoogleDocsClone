@@ -3,9 +3,7 @@ import Icon from "@component/icon/Icon";
 import IconButton from "@component/icon/IconButton";
 import BlankDocument from "./BlankDocument";
 
-interface StartDocumentSectionProps {}
-
-const StartDocumentSection: React.FC<StartDocumentSectionProps> = () => {
+const StartDocumentSection: React.FC = () => {
   return (
     <section className="bg-[#F8F9FA] pb-10 px-10">
       <div className="flex items-center justify-between py-6">
