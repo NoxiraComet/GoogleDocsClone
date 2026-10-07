@@ -1,6 +1,4 @@
-interface DefaultWrapperProps {}
-
-const DefaultWrapper: React.FC<DefaultWrapperProps> = ({ children }) => {
+const DefaultWrapper: React.FC = ({ children }) => {
   return <div className="max-w-3xl mx-auto">{children}</div>;
 };
 
