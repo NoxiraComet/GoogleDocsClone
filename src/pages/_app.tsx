@@ -1,3 +1,4 @@
+import { APP_STRINGS } from "@config/constants";
 import "@material-tailwind/react/tailwind.css";
 import "@style/globals.css";
 import { SessionProvider } from "next-auth/react";
@@ -8,7 +9,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>Google Docs Clone</title>
+        <title>{APP_STRINGS.appName}</title>
       </Head>
       {/*@ts-ignore*/}
       <Component {...pageProps} />
