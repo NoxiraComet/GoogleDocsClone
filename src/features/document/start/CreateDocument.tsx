@@ -1,3 +1,4 @@
+import { APP_STRINGS } from "@config/constants";
 import Button from "@component/buttons/Button";
 import Modal from "@component/modals/Modal";
 import { createDocument } from "@service/documentServices";
@@ -32,7 +33,7 @@ const CreateDocument: React.FC<CreateDocumentProps> = ({
           onChange={(e) => setInput(e.target.value)}
           type="text"
           className="outline-none w-full"
-          placeholder="Enter name of document..."
+          placeholder={APP_STRINGS.documentNamePlaceholder}
           onKeyDown={(e) => e.key === "Enter" && create()}
         />
       }
