@@ -3,9 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import CreateDocument from "./CreateDocument";
 
-interface BlankDocumentProps {}
-
-const BlankDocument: React.FC<BlankDocumentProps> = () => {
+const BlankDocument: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
