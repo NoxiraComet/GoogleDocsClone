@@ -1,6 +1,11 @@
 import { db } from "@config/firebase";
 import IsAuth from "@feature/auth/IsAuth";
-import EditorPage from "@feature/document/editor/EditorPage";
+import dynamic from "next/dynamic";
+
+const EditorPage = dynamic(() => import("@feature/document/editor/EditorPage"), {
+  ssr: false,
+  loading: () => <div className="p-6 text-gray-600">Loading editor...</div>,
+});
 import { GetServerSideProps } from "next";
 import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
