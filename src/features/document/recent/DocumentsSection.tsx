@@ -2,9 +2,7 @@ import { APP_STRINGS } from "@config/constants";
 import Icon from "@component/icon/Icon";
 import RecentDocuments from "./RecentDocuments";
 
-interface DocumentsSectionProps {}
-
-const DocumentsSection: React.FC<DocumentsSectionProps> = () => {
+const DocumentsSection: React.FC = () => {
   return (
     <section className="bg-white px-10 md:px-0">
       <div className="py-8 text-sm text-gray-700">

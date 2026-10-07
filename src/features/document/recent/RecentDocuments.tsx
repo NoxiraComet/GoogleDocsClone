@@ -5,9 +5,7 @@ import { useSession } from "next-auth/react";
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 import RecentDocument from "./RecentDocument";
 
-interface RecentDocumentsProps {}
-
-const RecentDocuments: React.FC<RecentDocumentsProps> = ({}) => {
+const RecentDocuments: React.FC = () => {
   const session = useSession();
   const [snapshot] = useCollectionOnce(
     db

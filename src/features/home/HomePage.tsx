@@ -3,9 +3,7 @@ import DefaultWrapper from "@component/wrappers/DefaultWrapper";
 import DocumentsSection from "@feature/document/recent/DocumentsSection";
 import StartDocumentSection from "@feature/document/start/StartDocumentSection";
 
-interface HomePageProps {}
-
-const HomePage: React.FC<HomePageProps> = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <Header />
