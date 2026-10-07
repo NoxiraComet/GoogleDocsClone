@@ -1,3 +1,4 @@
+import { FIRESTORE_COLLECTIONS } from "@config/constants";
 import { db } from "@config/firebase";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import { useSession } from "next-auth/react";
@@ -25,9 +26,9 @@ const TextEditor: React.FC<TextEditorProps> = () => {
 
   const [snapshot] = useDocumentOnce(
     db
-      .collection("userDocs")
+      .collection(FIRESTORE_COLLECTIONS.userDocuments)
       .doc(session?.data?.user?.email as string)
-      .collection("docs")
+      .collection(FIRESTORE_COLLECTIONS.documents)
       .doc(id as string)
   );
 
@@ -44,9 +45,9 @@ const TextEditor: React.FC<TextEditorProps> = () => {
   const onEditorStateChange = (editorState: EditorState) => {
     setEditorState(editorState);
 
-    db.collection("userDocs")
+    db.collection(FIRESTORE_COLLECTIONS.userDocuments)
       .doc(session?.data?.user?.email as string)
-      .collection("docs")
+      .collection(FIRESTORE_COLLECTIONS.documents)
       .doc(id as string)
       .set(
         {

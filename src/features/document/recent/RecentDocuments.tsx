@@ -1,3 +1,4 @@
+import { DOCUMENT_DATE_FORMAT, FIRESTORE_COLLECTIONS } from "@config/constants";
 import { db } from "@config/firebase";
 import moment from "moment";
 import { useSession } from "next-auth/react";
@@ -10,9 +11,9 @@ const RecentDocuments: React.FC<RecentDocumentsProps> = ({}) => {
   const session = useSession();
   const [snapshot] = useCollectionOnce(
     db
-      .collection("userDocs")
+      .collection(FIRESTORE_COLLECTIONS.userDocuments)
       .doc(session?.data?.user?.email as string)
-      .collection("docs")
+      .collection(FIRESTORE_COLLECTIONS.documents)
       .orderBy("timestamp", "desc")
   );
 
@@ -23,7 +24,7 @@ const RecentDocuments: React.FC<RecentDocumentsProps> = ({}) => {
           key={doc.id}
           id={doc.id}
           filename={doc.data().filename as string}
-          date={moment(doc.data().timestamp.toDate()).format("DD MMM YYYY")}
+          date={moment(doc.data().timestamp.toDate()).format(DOCUMENT_DATE_FORMAT)}
         />
       ))}
     </>

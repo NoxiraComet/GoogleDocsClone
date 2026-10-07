@@ -1,3 +1,4 @@
+import { APP_STRINGS } from "@config/constants";
 import Image from "next/image";
 import { useState } from "react";
 import CreateDocument from "./CreateDocument";
@@ -18,7 +19,7 @@ const BlankDocument: React.FC<BlankDocumentProps> = () => {
       >
         <Image src="/images/docs-blank.png" layout="fill" alt="blank" />
       </div>
-      <p className="ml-2 mt-2 font-semibold text-sm text-gray-700">Blank</p>
+      <p className="ml-2 mt-2 font-semibold text-sm text-gray-700">{APP_STRINGS.blankDocumentTitle}</p>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { APP_STRINGS } from "@config/constants";
 import Icon from "@component/icon/Icon";
 
 interface HeaderSearchProps {}
@@ -12,7 +13,7 @@ const HeaderSearch: React.FC<HeaderSearchProps> = () => {
       <Icon name="search" size="3xl" color="gray" />
       <input
         type="text"
-        placeholder="Search"
+        placeholder={APP_STRINGS.searchPlaceholder}
         className="flex-grow px-5 text-base bg-transparent outline-none"
       />
     </div>
