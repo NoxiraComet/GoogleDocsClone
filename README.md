@@ -83,3 +83,21 @@ Whether you use this project, have learned something from it, or just like it, p
 >You can check out the full license [here](https://github.com/MartsTech/google-docs-clone/blob/main/LICENSE)
 
 This project is licensed under the terms of the **MIT** license.
+
+
+## Project Structure
+
+Application code lives under `src/` and follows a feature-oriented layout:
+
+- `src/pages/` — Next.js route entry points. Keep route-specific data loading and route composition here.
+- `src/features/auth/` — authentication and login flows.
+- `src/features/document/` — document creation, recent documents, and the editor experience.
+- `src/components/` — reusable UI primitives shared across features (buttons, icons, wrappers, and shared layout components).
+- `src/configs/` — application configuration and shared constants.
+- `src/services/` — reusable operations such as document persistence.
+- `src/types/` — shared TypeScript types.
+- `src/styles/` — global styles.
+
+### Where new code belongs
+
+Prefer colocating components used by only one feature inside that feature's folder. Promote a component to `src/components/` when it is genuinely shared or represents a generic UI primitive. Keep route entry points thin, and use dynamic imports for large client-only experiences such as the rich-text editor. Put repeated collection names, route patterns, and display formats in `src/configs/constants.ts` rather than repeating string literals throughout components.
